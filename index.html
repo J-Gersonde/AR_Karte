@@ -3,15 +3,20 @@
 <head>
   <meta charset="UTF-8" />
   <title>AR Hiro Marker Test</title>
+
+  <!-- A-Frame -->
   <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-  <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/2.2.1/aframe/build/aframe-ar.js"></script>
+
+  <!-- AR.js: aktuelle Version -->
+  <script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar-nft.js"></script>
+
   <style>
     body { margin: 0; overflow: hidden; }
     #info {
       position: fixed;
       top: 10px;
       left: 10px;
-      background: rgba(0,0,0,0.7);
+      background: rgba(0, 0, 0, 0.6);
       color: white;
       padding: 10px;
       font-family: sans-serif;
@@ -24,7 +29,7 @@
 </head>
 <body>
   <a-scene embedded arjs>
-    <!-- Verwendet den eingebauten Hiro-Marker -->
+    <!-- Hiro-Marker nutzen -->
     <a-marker preset="hiro">
       <a-box position="0 0.5 0" color="yellow"></a-box>
     </a-marker>
@@ -32,6 +37,7 @@
     <a-entity camera></a-entity>
   </a-scene>
 
+  <!-- Marker-Link zum Anzeigen oder Drucken -->
   <div id="info">
     📷 Halte diesen Marker vor die Kamera:
     <a href="https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/hiro.png" target="_blank">hiro.png</a>
