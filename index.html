@@ -1,19 +1,42 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <title>AR.js Test</title>
-    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
-    <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/2.2.1/aframe/build/aframe-ar.js"></script>
-  </head>
-  <body style="margin: 0; overflow: hidden;">
-    <a-scene embedded arjs>
-      <a-marker preset="hiro">
-        <a-box position="0 0.5 0" material="color: yellow;"></a-box>
-      </a-marker>
-      <a-entity camera></a-entity>
-    </a-scene>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AR Marker Test</title>
+  <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+  <script src="https://cdn.rawgit.com/jeromeetienne/ar.js/2.2.1/aframe/build/aframe-ar.js"></script>
+  <style>
+    body { margin: 0; overflow: hidden; }
+    #info {
+      position: fixed;
+      top: 10px;
+      left: 10px;
+      padding: 10px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      font-family: sans-serif;
+    }
+    #info a {
+      color: yellow;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <a-scene embedded arjs>
+    <!-- Dein eigener Marker -->
+    <a-marker type="pattern" url="pattern-marker.patt">
+      <!-- Test-Würfel -->
+      <a-box position="0 0.5 0" color="orange"></a-box>
+    </a-marker>
+
+    <!-- Kamera -->
+    <a-entity camera></a-entity>
+  </a-scene>
+
+  <!-- Info + Marker-Link -->
+  <div id="info">
+    📷 Zeige diesen Marker vor die Kamera: <a href="pattern-marker.png" target="_blank">pattern-marker.png</a>
+  </div>
+</body>
 </html>
-
-
